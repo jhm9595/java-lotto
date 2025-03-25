@@ -1,6 +1,7 @@
 package calculator;
 
 import data.Messages;
+
 import java.util.Optional;
 import java.util.function.Consumer;
 
@@ -61,7 +62,7 @@ public class Calculator {
 
     public void calculate(String sign, String numStr) {
         Optional.of(SingEnum.valueOf(sign))
-                .orElseThrow(()-> new IllegalArgumentException(Messages.TYPE_ERROR))
+                .orElseThrow(() -> new IllegalArgumentException(Messages.TYPE_ERROR))
                 .consumer.accept(Integer.parseInt(numStr));
     }
 
